@@ -1,0 +1,139 @@
+<div class="container" style="margin-top:130px" >
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-3">
+
+            </div>
+            <div class="col-md-6">
+                <form [formGroup]="signupForm">
+                    <div class="card">
+                        <div class="card-header">
+                            Sign Up
+                        </div>
+                        <div class="card-body">
+
+                            <div class="row">
+                                <div class="col-md-3">
+                                    Username :
+                                </div>
+                                <div class="col-md-5">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" formControlName='username'>
+                                        <div *ngIf="username.invalid && (username.dirty || username.touched)"
+                                            class="alert alert-danger">
+                                            <div *ngIf="username.errors?.['required']">
+                                                username is required.
+                                            </div>
+
+                                            <div *ngIf="username.errors?.['pattern']">
+                                                Your username is incorrect !!
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-3">
+                                    Password :
+                                </div>
+                                <div class="col-md-5
+                                ">
+                                    <div class="form-group">
+                                        <input type="password" class="form-control" formControlName='password'>
+                                        <div *ngIf="password.invalid && (password.dirty || password.touched)"
+                                            class="alert alert-danger">
+                                            <div *ngIf="password.errors?.['required']">
+                                                Password is required.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-3">
+                                    Email :
+                                </div>
+                                <div class="col-md-5">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" formControlName='email'>
+                                        <div *ngIf="email.invalid && (email.dirty || email.touched)"
+                                            class="alert alert-danger">
+                                            <div *ngIf="email.errors?.['required']">
+                                                Email is required.
+                                            </div>
+
+                                            <div *ngIf="email.errors?.['email']">
+                                                Your email is incorrect !!
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-3">
+                                    Gender :
+                                </div>
+                                <div class="col-md-5">
+                                    <div class="form-group">
+                                        <select class="form-control" formControlName="gender">
+                                            <option *ngFor="let gender of Gender" [value]="gender">{{gender}}
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-3">
+                                    brith :
+                                </div>
+                                <div class="col-md-5">
+                                    <div class="form-group">
+                                        <input type="date" id="birthday" name="birthday" formControlName='birth'>
+                                    </div>
+         
+                                        
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="col-md-3">
+                                    Phone :
+                                </div>
+                                <div class="col-md-5">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" formControlName='phone'>
+                                        <div *ngIf="phone.invalid && (phone.dirty || phone.touched)"
+                                            class="alert alert-danger">
+                                            <div *ngIf="phone.errors?.['required']">
+                                                phone is required.
+                                            </div>
+
+                                            <div *ngIf="phone.errors?.['pattern']">
+                                                Your phone is incorrect !!
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <button type="button" class="btn btn-primary" (click)="signup()">Done</button>&nbsp;&nbsp;
+                                    <button type="button" class="btn btn-primary" (click)="back()">back</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-8">
+
+            </div>
+        </div>
+    </div>
+</div>

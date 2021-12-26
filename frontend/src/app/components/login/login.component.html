@@ -1,0 +1,57 @@
+<div style="width:100%;height:100%" class="size" [ngStyle]="{'background-color': parentColorProperty}"><br><br><br><br>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header bg-secondary text-white">
+                        <div class="float-left">
+                            Signin
+                        </div>            
+                    </div>
+                    <form [formGroup]="loginForm">
+                        <div class="card-body" [ngClass]="{'alert-danger': status}">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="">Username</label>
+                                        <input type="text" class="form-control" formControlName="username">
+                                            <div *ngIf="username.invalid && (username.dirty || username.touched)"
+                                            class="alert alert-danger">
+                                            <div *ngIf="username.errors?.['required']">
+                                                username is required.
+                                            </div>
+                                    </div>
+
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">Password</label>
+                                        <input type="password" class="form-control" formControlName="password">
+                                        <div *ngIf="password.invalid && (password.dirty || password.touched)"
+                                            class="alert alert-danger">
+                                            <div *ngIf="password.errors?.['required']">
+                                                password is required.
+                                            </div>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12"><br>
+                                    <button type="button" class="btn btn-primary" (click)="signin()">Sign
+                                        in</button>&nbsp;
+                                    <button type="button" class="btn btn-primary" (click)="signup()">Sign
+                                        up</button>&nbsp;
+                                </div>
+                            </div>
+                            <div>&nbsp;</div>
+                            <div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
